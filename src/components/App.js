@@ -62,7 +62,7 @@ function DynamicForm() {
       ))}
 
       <button type="button" onClick={handleAdd} style={{ marginRight: "10px" }}>
-        Add More
+        Add More..
       </button>
       <button type="submit">Submit</button>
     </form>
