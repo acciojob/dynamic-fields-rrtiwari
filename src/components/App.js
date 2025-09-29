@@ -22,13 +22,13 @@ function DynamicForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("Form Data:", fields);
+    console.log(fields);
   };
 
   return (
     <form onSubmit={handleSubmit} style={{ margin: "20px" }}>
       <h2>Dynamic Fields Form</h2>
-      
+
       <div className="fields-wrapper">
         {fields.map((field, index) => (
           <div
