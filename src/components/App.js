@@ -28,38 +28,40 @@ function DynamicForm() {
   return (
     <form onSubmit={handleSubmit} style={{ margin: "20px" }}>
       <h2>Dynamic Fields Form</h2>
-
-      {fields.map((field, index) => (
-        <div
-          key={index}
-          style={{
-            marginBottom: "10px",
-            padding: "10px",
-            border: "1px solid #ccc",
-            borderRadius: "5px",
-          }}
-        >
-          <input
-            type="text"
-            name="name"
-            placeholder="Name"
-            value={field.name}
-            onChange={(event) => handleChange(index, event)}
-            style={{ marginRight: "10px" }}
-          />
-          <input
-            type="number"
-            name="age"
-            placeholder="Age"
-            value={field.age}
-            onChange={(event) => handleChange(index, event)}
-            style={{ marginRight: "10px" }}
-          />
-          <button type="button" onClick={() => handleRemove(index)}>
-            Remove
-          </button>
-        </div>
-      ))}
+      
+      <div className="fields-wrapper">
+        {fields.map((field, index) => (
+          <div
+            key={index}
+            style={{
+              marginBottom: "10px",
+              padding: "10px",
+              border: "1px solid #ccc",
+              borderRadius: "5px",
+            }}
+          >
+            <input
+              type="text"
+              name="name"
+              placeholder="Name"
+              value={field.name}
+              onChange={(event) => handleChange(index, event)}
+              style={{ marginRight: "10px" }}
+            />
+            <input
+              type="number"
+              name="age"
+              placeholder="Age"
+              value={field.age}
+              onChange={(event) => handleChange(index, event)}
+              style={{ marginRight: "10px" }}
+            />
+            <button type="button" onClick={() => handleRemove(index)}>
+              Remove
+            </button>
+          </div>
+        ))}
+      </div>
 
       <button type="button" onClick={handleAdd} style={{ marginRight: "10px" }}>
         Add More..
@@ -70,3 +72,4 @@ function DynamicForm() {
 }
 
 export default DynamicForm;
+
